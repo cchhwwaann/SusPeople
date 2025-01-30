@@ -57,31 +57,29 @@ while cap.isOpened():
             pyautogui.moveTo(x, y)
 
             # 2️⃣ 특정 동작에 따라 동작 실행
-            if gesture == 0:  # 예: '클릭' 동작 (엄지검지 붙이기기)
+            if gesture == 0:  # 예: '클릭' 동작
                 pyautogui.click()
                 cv2.putText(frame, 'Click!', (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
 
-            elif gesture == 1:  # 예: '볼륨 업' 동작 (따봉)
+            elif gesture == 1:  # 예: '볼륨 업' 동작
                 pyautogui.press('volumeup')
                 cv2.putText(frame, 'Volume Up', (50, 100), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
 
-            if gesture == 2:  # 예: '볼륨 다운' 동작(리버스따봉봉)
+            elif gesture == 2:  # 예: '볼륨 다운' 동작
                 pyautogui.press('volumedown')
                 cv2.putText(frame, 'Volume Down', (50, 150), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
 
-            if gesture == 3:  # 예: '우클릭' 동작(검지중지지브이)
+            elif gesture == 3:  # 예: '우클릭' 동작
                 pyautogui.rightClick()
 
-            if gesture == 4:  # 예: '재생/일시정지' 동작(새끼손까락 쪽이 보이게 주먹먹)
+            elif gesture == 4:  # 예: '재생/일시정지' 동작
                 pyautogui.press('playpause')
 
-            if gesture == 5:  # 브라우저 뒤로 가기( 총 모양으로 화면 왼쪽 가리키기)
+            elif gesture == 5:  # 브라우저 뒤로 가기
                 pyautogui.hotkey('alt', 'left')
-            
-            elif gesture == 6:  # 브라우저 앞으로 가기(총 모양으로 오른쪽 가리키기)
+
+            elif gesture == 6:  # 브라우저 앞으로 가기
                 pyautogui.hotkey('alt', 'right')
-
-
 
     # 화면 출력
     cv2.imshow('Hand Gesture Control', frame)
